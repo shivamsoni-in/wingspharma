@@ -1,0 +1,189 @@
+ <div class="owl-carousel before_after_vedio  owl-theme mt-5">
+            <div class="item_vedio">
+                <img src="assets/img/vedio_img/Testimonials-01.png" alt="">
+                <div class="team-text">
+
+                    <button type="button" class="btn-play">
+                        <a href="https://www.youtube.com/watch?v=SXvG5bxC11U" class=" video-popup"> <span></span> </a>
+                    </button>
+                </div>
+            </div>
+            <div class="item_vedio"><img src="assets/img/vedio_img/Testimonials02.png" alt="">
+                <div class="team-text">
+
+                    <button type="button" class="btn-play">
+                        <a href="https://www.youtube.com/watch?v=TdXkxg2b1G8" class=" video-popup"> <span></span> </a>
+                    </button>
+                </div>
+            </div>
+            <div class="item_vedio"><img src="assets/img/vedio_img/Testimonials-03.png" alt="">
+                <div class="team-text">
+
+                    <button type="button" class="btn-play">
+                        <a href="https://www.youtube.com/watch?v=UCaZlaVUciY" class=" video-popup"> <span></span> </a>
+                    </button>
+
+                </div>
+            </div>
+            <div class="item_vedio"><img src="assets/img/vedio_img/Testimonials-04.png" alt="">
+                <div class="team-text">
+
+
+                    <button type="button" class="btn-play">
+                        <a href="https://www.youtube.com/watch?v=KeQ92Y3MmiM" class=" video-popup"> <span></span> </a>
+                    </button>
+                </div>
+            </div>
+            <div class="item_vedio"><img src="assets/img/vedio_img/Testimonials-05.png" alt="">
+                <div class="team-text">
+
+                    <button type="button" class="btn-play">
+                        <a href="https://www.youtube.com/watch?v=SOcqTuavxDw" class=" video-popup"> <span></span> </a>
+                    </button>
+                </div>
+            </div>
+            <div class="item_vedio"><img src="assets/img/vedio_img/Testimonials-06.png" alt="">
+                <div class="team-text">
+                    <button type="button" class="btn-play">
+                        <a href="https://www.youtube.com/watch?v=FFHKhw9I9IE" class=" video-popup"> <span></span> </a>
+                    </button>
+
+                </div>
+            </div>
+            <div class="item_vedio"><img src="assets/img/vedio_img/Testimonials-07.png" alt="">
+                <div class="team-text">
+                    <button type="button" class="btn-play">
+                        <a href="https://www.youtube.com/watch?v=Pkot_y96DKk" class=" video-popup"> <span></span> </a>
+                    </button>
+
+                </div>
+            </div>
+            <div class="item_vedio"><img src="assets/img/vedio_img/Testimonials-08.png" alt="">
+                <div class="team-text">
+                    <button type="button" class="btn-play">
+                        <a href="https://www.youtube.com/watch?v=1GmK0RkIYKk" class=" video-popup"> <span></span> </a>
+                    </button>
+
+                </div>
+            </div>
+            <div class="item_vedio"><img src="assets/img/vedio_img/Testimonials-09.png" alt="">
+                <div class="team-text">
+                    <button type="button" class="btn-play">
+                        <a href="https://www.youtube.com/watch?v=E11EMrqlDV4" class=" video-popup"> <span></span> </a>
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+        <!-- Video Modal Start-->
+<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-pledby="exampleModalp" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-p="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <!-- 16:9 aspect ratio -->
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always"
+                        allow="autoplay"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Video Modal End -->
+
+
+
+
+// Modal Video
+$(document).ready(function() {
+    var $videoSrc;
+    $('.btn-play').click(function() {
+        $videoSrc = $(this).data("src");
+    });
+    console.log($videoSrc);
+
+    $('#videoModal').on('shown.bs.modal', function(e) {
+        $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
+    })
+
+    $('#videoModal').on('hide.bs.modal', function(e) {
+        $("#video").attr('src', $videoSrc);
+    })
+});
+
+
+
+
+.btn-play {
+    position: absolute;
+    z-index: 1;
+    top: 49%;
+      left: 2%;
+    transform: translateX(-50%) translateY(-50%);
+    box-sizing: content-box;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    padding: 27px 20px 18px 28px;
+  }
+  .btn-play:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: #d7b961;
+    border-radius: 50%;
+    animation: pulse-border 1500ms ease-out infinite;
+  }
+  .btn-play:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: #d7b961;
+    border-radius: 50%;
+    transition: all 200ms;
+  }
+  .btn-play span {
+    display: block;
+    position: relative;
+    z-index: 3;
+    width: 0;
+    height: 0;
+    margin-left: 0px;
+    margin-top: -6px;
+    border-left:25px solid #080808;
+    border-top: 14px solid transparent;
+    border-bottom: 12px solid transparent;
+  }
+  @keyframes pulse-border {
+    0% {
+      transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+      opacity: 0;
+    }
+  }
